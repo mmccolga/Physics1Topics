@@ -26,9 +26,11 @@ MacOS:
   
 ***** At 4:13 in the video, you learn how to configure your github profile with git. ******
 
-Run the following commands:   (Note: You can choose any directory you want.)
-- mkdir ~/UnityProjects       (Note: '~' is the location of your user folder on your local device.)
-- cd ~/UnityProjects
+***** At 15:10 in the video, you learn how to clone a repo. Watch before doing the next steps so that it is clear. ******
+
+'cd' into a directory of your choice, (I use Documents) then run the following commands:
+- mkdir /UnityProjects       
+- cd /UnityProjects
 - git clone https://github.com/SienaUnityXRApps/SienaARPrimaryApp
 - cd SienaARPrimaryApp
 - git status            (this will give the status of the repository and may give you further instruction.)
