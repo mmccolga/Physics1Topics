@@ -27,7 +27,7 @@ MacOS:
 ***** At 4:13 in the video, you learn how to configure your github profile with git. ******
 
 Run the following commands:   (Note: You can choose any directory you want.)
-- mkdir ~/UnityProjects
+- mkdir ~/UnityProjects       (Note: '~' is the location of your user folder on your local device.)
 - cd ~/UnityProjects
 - git clone https://github.com/SienaUnityXRApps/SienaARPrimaryApp
 - cd SienaARPrimaryApp
@@ -37,7 +37,7 @@ Close the terminal.
 
 Open Unity Hub.
 Click Add in the Projects screen.
-Locate our ~/UnityProjects/SienaARChemistry repo directory. ('~' is the location of your user/home folder.)
+Locate our ~/UnityProjects/SienaARPrimaryApp repo directory. ('~' is the location of your user/home folder.)
 Open the project with Unity version 2020.2.2f1.
   
 Congrats, you've cloned our template project!
