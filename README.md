@@ -2,7 +2,7 @@
 An educational mixed reality application for teaching students complex topics in fields of science.
 
 
-What is Git and Github?
+# What is Git and Github?
 
   Git is a version control system for computer terminals. Git tracks a directory called a
   repository and the user can specify what files in that directory can be saved in the cloud.
@@ -12,7 +12,7 @@ What is Git and Github?
   Github is simply a website to view and manage your Git profile and repositories.
   
 
-Instructions:
+# Instructions:
 
 Make an account at https://github.com
 
