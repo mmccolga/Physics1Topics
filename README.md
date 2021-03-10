@@ -29,7 +29,7 @@ MacOS:
 Run the following commands:   (Note: You can choose any directory you want.)
 - mkdir ~/UnityProjects
 - cd ~/UnityProjects
-- git clone https://github.com/JustinMarotta13/SienaARPrimaryApp.git
+- git clone https://github.com/SienaUnityXRApps/SienaARPrimaryApp
 - cd SienaARPrimaryApp
 - git status            (this will give the status of the repository and may give you further instruction.)
 
