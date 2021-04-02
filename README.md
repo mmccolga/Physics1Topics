@@ -39,7 +39,7 @@ Close the terminal.
 
 Open Unity Hub.
 Click Add in the Projects screen.
-Locate our ~/UnityProjects/SienaARPrimaryApp repo directory. ('~' is the location of your user or home folder.)
+Locate our /UnityProjects/SienaARPrimaryApp repo directory.
 Open the project with Unity version 2019.4.21f1.  (Install it if you do not have it already.)
 Do not update Vuforia if it prompts you to do so. (It probably will... all the time.)
   
