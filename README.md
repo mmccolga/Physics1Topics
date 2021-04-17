@@ -49,6 +49,9 @@ Congrats, you've cloned the Siena Primary App for Physcis simulations!
 
   Before making local changes, always do a 'git pull' to make sure you have all the changes in the cloud.
   
+  When pulling, you may get stuck in a screen saying "merge request message"
+  Don't do anything except type ':wq' on the keyboard. That will make that screen go away. (That stands for write and quit if that helps you remember)
+  
   After adding a new Scene or any GameObject or Script, you will need to use the terminal to 'git add filename' to track that file.
   If you added many files, 'git status' will show you all the untraked files you need to add.
   If you agree with all the files it is saying to add, you can run 'git add --all'
@@ -66,9 +69,6 @@ Congrats, you've cloned the Siena Primary App for Physcis simulations!
   run 'git add --all'
   then 'git commit -am "message generalizing all the changes you made"
   then finally 'git push'
-  
-  If you ever get stuck in a screen saying "merge request message"
-  Don't do anything except type ':wq' on the keyboard. That will make that screen go away. (That stands for write and quit if that helps you remember)
 
 More Git Commands:
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
