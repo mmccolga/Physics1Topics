@@ -7050,12 +7050,12 @@ GameObject:
   m_Component:
   - component: {fileID: 360321736}
   m_Layer: 5
-  m_Name: Direction Convention
+  m_Name: MagneticFieldForce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &360321736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30324,7 +30324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1288102074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51510,7 +51510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2063704543
 RectTransform:
   m_ObjectHideFlags: 0
