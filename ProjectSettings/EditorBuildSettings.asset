@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ElectricFieldAndForce/ElectricForce.unity
     guid: e7efdaead4ca2b14ba329eb012fa355a
   - enabled: 1
-    path: Assets/Scenes/Electro-magnetic Direction Convention/DirectionConvention.unity
+    path: Assets/Scenes/Magnetism/Magnetism.unity
     guid: 29ef58c03cddbfe40aa48b5f551bd5d1
   - enabled: 1
     path: Assets/Scenes/AmpLaw/AmpLaw.unity
