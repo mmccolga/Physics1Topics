@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2468876}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Diagrams
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 61057781}
   - component: {fileID: 61057783}
   - component: {fileID: 61057782}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ElectronsLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 68676521}
   - component: {fileID: 68676523}
   - component: {fileID: 68676522}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BFieldLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,7 +2160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 133265279}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus Tanget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,7 +2313,7 @@ GameObject:
   - component: {fileID: 143473788}
   - component: {fileID: 143473790}
   - component: {fileID: 143473789}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BFieldLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2558,7 +2558,7 @@ GameObject:
   - component: {fileID: 151031743}
   - component: {fileID: 151031742}
   - component: {fileID: 151031741}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3108,7 +3108,7 @@ GameObject:
   - component: {fileID: 185629456}
   - component: {fileID: 185629455}
   - component: {fileID: 185629454}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5639,7 +5639,7 @@ GameObject:
   - component: {fileID: 305596245}
   - component: {fileID: 305596244}
   - component: {fileID: 305596243}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5733,7 +5733,7 @@ GameObject:
   - component: {fileID: 311930150}
   - component: {fileID: 311930149}
   - component: {fileID: 311930148}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6637,7 +6637,7 @@ GameObject:
   - component: {fileID: 350177094}
   - component: {fileID: 350177093}
   - component: {fileID: 350177092}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8214,7 +8214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426329426}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: -Current
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9459,7 +9459,7 @@ GameObject:
   - component: {fileID: 464285144}
   - component: {fileID: 464285143}
   - component: {fileID: 464285142}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11039,7 +11039,7 @@ GameObject:
   - component: {fileID: 555859476}
   - component: {fileID: 555859475}
   - component: {fileID: 555859474}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11229,7 +11229,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -11616,7 +11616,7 @@ PrefabInstance:
     - target: {fileID: -8014605523992367221, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2639764523876023008, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -11631,12 +11631,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465531706477910620, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260216051105776834, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -12275,7 +12275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 627654483}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ElectronCurrentArrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12312,7 +12312,7 @@ GameObject:
   - component: {fileID: 632839720}
   - component: {fileID: 632839719}
   - component: {fileID: 632839718}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12474,7 +12474,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -12614,7 +12614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646349385}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus No Tangent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14440,7 +14440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728871865}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ElectronCurrentArrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18097,7 +18097,7 @@ PrefabInstance:
     - target: {fileID: -8014605523992367221, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2639764523876023008, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -18112,12 +18112,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465531706477910620, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260216051105776834, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -20778,7 +20778,7 @@ GameObject:
   - component: {fileID: 1075719696}
   - component: {fileID: 1075719698}
   - component: {fileID: 1075719697}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: CurrentLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21152,7 +21152,7 @@ GameObject:
   - component: {fileID: 1086483840}
   - component: {fileID: 1086483839}
   - component: {fileID: 1086483838}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ElectronsParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25986,7 +25986,7 @@ PrefabInstance:
     - target: {fileID: -8014605523992367221, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2639764523876023008, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -26001,12 +26001,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465531706477910620, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260216051105776834, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -29666,7 +29666,7 @@ GameObject:
   - component: {fileID: 1256792161}
   - component: {fileID: 1256792160}
   - component: {fileID: 1256792159}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30732,7 +30732,7 @@ GameObject:
   - component: {fileID: 1342569870}
   - component: {fileID: 1342569869}
   - component: {fileID: 1342569868}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Side View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31472,7 +31472,7 @@ GameObject:
   - component: {fileID: 1375680939}
   - component: {fileID: 1375680941}
   - component: {fileID: 1375680940}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ElectronsLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32382,7 +32382,7 @@ PrefabInstance:
     - target: {fileID: -8014605523992367221, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2639764523876023008, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -32397,12 +32397,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465531706477910620, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260216051105776834, guid: 7e2283975f7fe764e90c50069beaf49d,
         type: 3}
@@ -33009,7 +33009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451777882}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Diagrams
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38436,7 +38436,7 @@ GameObject:
   - component: {fileID: 1685702416}
   - component: {fileID: 1685702418}
   - component: {fileID: 1685702417}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38693,7 +38693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1712217132}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus No Tangent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39771,7 +39771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1748576165}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: +Current
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40179,7 +40179,7 @@ GameObject:
   - component: {fileID: 1771857103}
   - component: {fileID: 1771857102}
   - component: {fileID: 1771857101}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Side View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42208,7 +42208,7 @@ GameObject:
   - component: {fileID: 1850082711}
   - component: {fileID: 1850082713}
   - component: {fileID: 1850082712}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: CurrentLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42513,7 +42513,7 @@ GameObject:
   - component: {fileID: 1866551163}
   - component: {fileID: 1866551162}
   - component: {fileID: 1866551164}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ElectronsParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51072,7 +51072,7 @@ GameObject:
   - component: {fileID: 2065701581}
   - component: {fileID: 2065701580}
   - component: {fileID: 2065701579}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52815,7 +52815,7 @@ GameObject:
   - component: {fileID: 7110066123131881171}
   - component: {fileID: 4137587689467853798}
   - component: {fileID: 2856668949911831857}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52931,7 +52931,7 @@ GameObject:
   - component: {fileID: 8961782646262561636}
   - component: {fileID: 2853321420580013649}
   - component: {fileID: 4131577550408251528}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53077,7 +53077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6539151558139439812}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus Tanget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53120,7 +53120,7 @@ GameObject:
   - component: {fileID: 656182617026027421}
   - component: {fileID: 3856278948675524992}
   - component: {fileID: 7848805160001725021}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53157,7 +53157,7 @@ GameObject:
   - component: {fileID: 2305022667247348393}
   - component: {fileID: 702506558499391709}
   - component: {fileID: 2320545506258241095}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53176,7 +53176,7 @@ GameObject:
   - component: {fileID: 1723075729298727466}
   - component: {fileID: 3131941175195526199}
   - component: {fileID: 8223058448519667692}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
