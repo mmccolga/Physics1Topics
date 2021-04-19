@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AmpLaw/AmpLaw.unity
     guid: 5c9332cc97e994f4ab20f1c7a1959341
+  - enabled: 1
+    path: Assets/Scenes/E&MWaves/EM.unity
+    guid: 6a509dfdd1d4e3448b1e6b659ce7d10f
+  - enabled: 1
+    path: Assets/Scenes/GaussLaw/GaussLaw.unity
+    guid: c36c6d6e8bd5e430d8dc3a5e95602cd4
   m_configObjects: {}
