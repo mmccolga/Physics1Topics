@@ -459,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 8886775438935905586, guid: 57cd1c17989d246a19945cb86eb3090a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.9987316
       objectReference: {fileID: 0}
     - target: {fileID: 8886775438935905586, guid: 57cd1c17989d246a19945cb86eb3090a,
         type: 3}
@@ -1332,15 +1332,15 @@ MonoBehaviour:
           m_StringArgument: Centripetal
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7539870962893641573}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8324915996217867479}
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: not_dragging
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 657434985}
@@ -1363,6 +1363,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8324915996217867479}
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: dragging
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &578396035
@@ -1839,15 +1850,15 @@ MonoBehaviour:
           m_StringArgument: Centripetal
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7539870962893641573}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8324915996217867479}
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: dragging
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 657434985}
@@ -1870,6 +1881,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8324915996217867479}
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: not_dragging
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &657434989
@@ -2602,8 +2624,6 @@ MonoBehaviour:
   m_Script: {fileID: -1826476478, guid: 4bc5fd733b147194692297d23f623541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWorldCenterMode: 2
-  mWorldCenter: {fileID: 0}
 --- !u!81 &1056583781
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8309,8 +8329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844909464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 2, y: 0.5, z: 2}
+  m_LocalPosition: {x: 0, y: 0.702, z: 0}
+  m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_Children: []
   m_Father: {fileID: 342576637}
   m_RootOrder: 1
@@ -9245,12 +9265,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8324915996217867478}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &7539870962893641573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3185318153413547781, guid: 57cd1c17989d246a19945cb86eb3090a,
-    type: 3}
-  m_PrefabInstance: {fileID: 338483555}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7539870962893641575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1116197624609742418, guid: 57cd1c17989d246a19945cb86eb3090a,
