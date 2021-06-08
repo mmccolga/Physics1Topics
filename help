@@ -1,0 +1,7 @@
+Update from GitHub	>>git pull
+
+Add new files to repo	>>git add --all
+
+Commit changes (adding, removing, modifying files)	>>git commit -am "what your changes are"
+
+Upload commited progress to GitHub	>>git push
