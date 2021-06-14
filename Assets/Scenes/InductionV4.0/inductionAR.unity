@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44950384, g: 0.499574, b: 0.5756801, a: 1}
+  m_IndirectSpecularColor: {r: 0.4495045, g: 0.49957484, b: 0.57568157, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1225,7 +1225,6 @@ Transform:
   - {fileID: 1819337157}
   - {fileID: 1221166181}
   - {fileID: 477545382}
-  - {fileID: 769897314}
   - {fileID: 377248068}
   - {fileID: 1090011110}
   - {fileID: 1803597368}
@@ -5883,7 +5882,7 @@ Transform:
   - {fileID: 1333254859}
   - {fileID: 901452119}
   m_Father: {fileID: 41345120}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &378640235
 PrefabInstance:
@@ -14664,6 +14663,8 @@ GameObject:
   m_Component:
   - component: {fileID: 769897314}
   - component: {fileID: 769897315}
+  - component: {fileID: 769897316}
+  - component: {fileID: 769897317}
   m_Layer: 0
   m_Name: copperRing
   m_TagString: Untagged
@@ -14679,12 +14680,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769897313}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.2, y: -0.35, z: -11.42}
-  m_LocalScale: {x: 0.175, y: 0.17499998, z: 0.17499998}
+  m_LocalPosition: {x: -0.2, y: 0.35, z: 5}
+  m_LocalScale: {x: 0.175, y: 0.17499997, z: 0.17499997}
   m_Children:
   - {fileID: 1660842006}
-  m_Father: {fileID: 41345120}
-  m_RootOrder: 4
+  m_Father: {fileID: 1150529858}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!95 &769897315
 Animator:
@@ -14705,6 +14706,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &769897316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769897313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d29289217e7fa4188b1e91ba574658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ring: {fileID: 769897313}
+  speed1: {fileID: 645297376}
+  speed2: {fileID: 1622389397}
+  speed3: {fileID: 1361824747}
+  speed4: {fileID: 1046465676}
+--- !u!65 &769897317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769897313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.1246285, y: 0.9393965, z: 4.5267115}
+  m_Center: {x: 1.1425093, y: 2.1659284, z: -1.9865078}
 --- !u!1 &769963193
 GameObject:
   m_ObjectHideFlags: 0
@@ -21969,7 +22000,7 @@ Transform:
   - {fileID: 1361824748}
   - {fileID: 1046465677}
   m_Father: {fileID: 41345120}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1093466123
 GameObject:
@@ -22981,6 +23012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1701018446}
+  - {fileID: 769897314}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34384,7 +34416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4783436477664850, guid: 26495d705a2a1be43b2dc63ff097feef, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4783436477664850, guid: 26495d705a2a1be43b2dc63ff097feef, type: 3}
       propertyPath: m_LocalScale.x
@@ -36590,7 +36622,7 @@ Transform:
   - {fileID: 1529868411}
   - {fileID: 107766488}
   m_Father: {fileID: 41345120}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811520936
 GameObject:
