@@ -648,9 +648,9 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2.5
-        value: {x: 1.93, y: 1.674, z: 0.138}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        value: {x: 1.87, y: 1.57, z: 0.1371592}
+        inSlope: {x: 0, y: 0, z: 0.0031043675}
+        outSlope: {x: 0, y: 0, z: 0.0031043675}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -691,9 +691,9 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2.5
-        value: {x: 0.05, y: 0.9, z: 0.05}
-        inSlope: {x: 0, y: -0.048000053, z: 0}
-        outSlope: {x: 0, y: -0.048000053, z: 0}
+        value: {x: 0.05, y: 0.786, z: 0.05}
+        inSlope: {x: 0, y: -0.0872, z: 0}
+        outSlope: {x: 0, y: -0.0872, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -734,7 +734,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2.5
-        value: {x: 0.03, y: 0.68, z: -0.02}
+        value: {x: 0.03, y: 0.604, z: -0.02}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -3642,7 +3642,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.5
-        value: 1.93
+        value: 1.87
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3697,7 +3697,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.5
-        value: 1.674
+        value: 1.57
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3752,9 +3752,9 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.5
-        value: 0.138
-        inSlope: 0
-        outSlope: 0
+        value: 0.1371592
+        inSlope: 0.0031043675
+        outSlope: 0.0031043675
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -3954,9 +3954,9 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.5
-        value: 0.9
-        inSlope: -0.048000053
-        outSlope: -0.048000053
+        value: 0.786
+        inSlope: -0.0872
+        outSlope: -0.0872
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -4092,7 +4092,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.5
-        value: 0.68
+        value: 0.604
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -4371,6 +4371,36 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
+    path: Epoxide/Carbon 1/Bonds/Bond 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Epoxide/Carbon 1/Bonds/Bond 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Epoxide/Carbon 1/Bonds/Bond 4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
     path: Epoxide/Carbon 1/Bonds/Bond 2
     classID: 4
     script: {fileID: 0}
@@ -4422,36 +4452,6 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Epoxide/Carbon 2/Bonds/Bond 2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Epoxide/Carbon 1/Bonds/Bond 4
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Epoxide/Carbon 1/Bonds/Bond 4
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Epoxide/Carbon 1/Bonds/Bond 4
     classID: 4
     script: {fileID: 0}
   - curve:
