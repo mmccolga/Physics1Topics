@@ -38,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Magnetism/Magnetism.unity
     guid: 29ef58c03cddbfe40aa48b5f551bd5d1
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/E&MWaves/EM.unity
     guid: 6a509dfdd1d4e3448b1e6b659ce7d10f
@@ -53,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AmpLaw/AmpLaw.unity
     guid: 79860ee735a937547b2228b0e2b9838a
+  - enabled: 1
+    path: Assets/Scenes/EField/EField.unity
+    guid: a4c9cdadf8f1f3b49a6e5e3fec5ba8ec
   m_configObjects: {}
