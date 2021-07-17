@@ -84,19 +84,28 @@ AnimationClip:
         time: 0
         value: {x: 0.65, y: 0.65, z: 0.03}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0.36949396}
+        outSlope: {x: 0, y: 0, z: 0.5828324}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
+        time: 0.51666665
+        value: {x: 0.65, y: 0.65, z: 0.33113006}
+        inSlope: {x: 0, y: 0, z: 0.52610743}
+        outSlope: {x: 0, y: 0, z: 0.26328847}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.50473195}
+      - serializedVersion: 3
         time: 0.98333335
         value: {x: 0.65, y: 0.65, z: 0.39333573}
-        inSlope: {x: 0, y: 0, z: 0.36949396}
+        inSlope: {x: 0, y: 0, z: -0.086577356}
         outSlope: {x: 0, y: 0, z: 0.035256308}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.3599693}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.44117838}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.7097178}
       - serializedVersion: 3
         time: 1
@@ -355,19 +364,28 @@ AnimationClip:
         time: 0
         value: 0.03
         inSlope: 0
-        outSlope: 0.36949396
+        outSlope: 0.5828324
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.51666665
+        value: 0.33113006
+        inSlope: 0.52610743
+        outSlope: 0.26328847
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.50473195
+      - serializedVersion: 3
         time: 0.98333335
         value: 0.39333573
-        inSlope: 0.36949396
+        inSlope: -0.086577356
         outSlope: 0.035256308
-        tangentMode: 5
+        tangentMode: 1
         weightedMode: 0
-        inWeight: 0.3599693
+        inWeight: 0.44117838
         outWeight: 0.7097178
       - serializedVersion: 3
         time: 1.5166667
