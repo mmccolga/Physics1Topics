@@ -11,7 +11,9 @@
 /[Uu]ser[Ss]ettings/
 
 #QCAR
-QCAR/somedata16
+/QCAR/
+
+.DS_Store
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

@@ -1,94 +1,92 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class CircularMovement : MonoBehaviour
 {
-    //public GameObject 
-    public Transform centerObject;
+    public Transform center;
+    private Vector3 startingLocalPosition;
+    private Quaternion startingLocalRotation;
+
     public float initialVelocity;
+    public Vector3 inititalVDirection;
     public bool rotate = true;
-    public bool freezeLocalZRotation = false;
-    public bool freezeLocalYRotation = false;
     public float maxSize = 1;
     public float minSize = 1;
 
-    private Vector3 startPos;
-    private Quaternion startRot;
-    private bool revolving;
-
     private Vector3 velocity;
     private float radius;
-
-    private Vector3 dirToLocalCenter;
-    private float centripetalAccl;
+    private Vector3 vCenter;
+    private float centripetalForce;
+    private bool revolving;
+    private Vector3 lastVelocity;
+    private Vector3 centripetalAccel;
 
     private void Awake()
     {
-        startPos = transform.localPosition;
-        startRot = transform.localRotation;
-        radius = (centerObject.localPosition - transform.localPosition).magnitude;
-        velocity = transform.rotation * transform.forward * initialVelocity;
+        revolving = true;
     }
 
     private void OnEnable()
     {
-        transform.localPosition = startPos;
-        transform.localRotation = startRot;
+        radius = (center.localPosition - transform.localPosition).magnitude;
+        velocity = inititalVDirection * initialVelocity;
+    }
 
-        revolving = true;
+    private void Start()
+    {
+        startingLocalPosition = transform.localPosition;
+        startingLocalRotation = transform.localRotation;
     }
 
     private void OnDisable()
     {
-        if (revolving)
-            revolving = false;
-
+        transform.localPosition = startingLocalPosition;
+        transform.localRotation = startingLocalRotation;
         velocity = Vector3.zero;
     }
 
     private void FixedUpdate()
     {
-        if (!revolving)
-            return;
+        if (revolving)
+        {
+            ApplyCentripetalForce();
+            
+            if (maxSize != minSize)
+                OscilateSize();
+            
+            transform.localPosition = transform.localPosition + (velocity * Time.fixedDeltaTime);
 
-        if (maxSize != minSize)
-            OscilateSize();
-
-        CalculateCentripetalForce();
-
-        if (rotate)
-            Rotate();
-
-        transform.localPosition += velocity * Time.fixedDeltaTime;
+            if (rotate)
+                Rotate();
+        }
     }
 
-    private void CalculateCentripetalForce()
+    private void ApplyCentripetalForce()
     {
-        dirToLocalCenter = (centerObject.localPosition - transform.localPosition).normalized;
+        vCenter = center.localPosition - transform.localPosition;
+        centripetalForce = velocity.sqrMagnitude / radius;    // ac = (v^2 / r) * M
+        centripetalAccel = vCenter.normalized * centripetalForce;
 
-        centripetalAccl = velocity.sqrMagnitude / radius; // ac = (v^2 / r) * M
-
-        velocity += centripetalAccl * Time.fixedDeltaTime * dirToLocalCenter;
+        velocity += centripetalAccel * Time.fixedDeltaTime; // apply ac
     }
 
     private void Rotate()
     {
-        Quaternion forward = Quaternion.LookRotation(velocity, Vector3.up);
+        if (inititalVDirection == Vector3.forward)
+        {
+            transform.localRotation = Quaternion.LookRotation(velocity, Vector3.up);
+            return;
+        }
 
-        if (freezeLocalZRotation)
-            forward.eulerAngles = new Vector3(forward.eulerAngles.x, forward.eulerAngles.y, transform.localRotation.eulerAngles.z);
-
-        if (freezeLocalYRotation)
-            forward.eulerAngles = new Vector3(forward.eulerAngles.x, transform.localRotation.eulerAngles.y, forward.eulerAngles.z);
-
-        transform.localRotation = forward;
+        if (inititalVDirection == Vector3.right)
+        {
+            transform.localRotation = Quaternion.LookRotation(Vector3.forward, vCenter);
+            return;
+        }
     }
 
     public float GetOscilationValue()
     {
-        return 1 - ((transform.localPosition.y - startPos.y) / (2 * radius));
+        return 1 - ((transform.localPosition.y - startingLocalPosition.y) / (2 * radius));
     }
 
     private float OscilateBetweenFloats(float max, float min)
@@ -105,9 +103,20 @@ public class CircularMovement : MonoBehaviour
     {
         if (revolving)
         {
-            OnDisable();
-            return; 
+            revolving = false;
+            lastVelocity = velocity;
+            velocity = Vector3.zero;
         }
+        else
+        {
+            revolving = true;
+            velocity = lastVelocity;
+        }
+    }
+
+    public void Reset()
+    {
+        OnDisable();
         OnEnable();
     }
 }
