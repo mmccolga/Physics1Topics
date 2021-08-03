@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-7499586413643142928
+--- !u!1102 &-8690293102247187221
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Electrocyclic_B 0
+  m_Name: Electrocyclic_B
   m_Speed: 0.25
   m_CycleOffset: 0
   m_Transitions: []
@@ -36,8 +36,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -7499586413643142928}
-    m_Position: {x: 260, y: 220, z: 0}
+    m_State: {fileID: -8690293102247187221}
+    m_Position: {x: 270, y: 210, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -47,7 +47,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -7499586413643142928}
+  m_DefaultState: {fileID: -8690293102247187221}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
