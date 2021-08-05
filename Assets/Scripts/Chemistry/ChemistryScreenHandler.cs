@@ -1,16 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
+
 public class ChemistryScreenHandler : MonoBehaviour
 {
     public Animator mechanismAnimator;
     public GameObject lastMechanism;
     public GameObject lastMenuScreen;
-    private float animSpeed;
+    private float _currentAnimSpeed = 0;
 
-    public void SetMechanismAnimator(Animator mechanismAnimator)
+    private void Start() { }
+
+    public void SetMechanismAnimator(Animator newMechanismAnimator)
     {
-        this.mechanismAnimator = mechanismAnimator;
+        if (_currentAnimSpeed != 0)
+            mechanismAnimator.speed = _currentAnimSpeed;
+
+        mechanismAnimator = newMechanismAnimator;
+        _currentAnimSpeed = newMechanismAnimator.speed;
     }
 
     public void SetLastMenuScreen(GameObject lastMenuScreen)
@@ -35,12 +44,11 @@ public class ChemistryScreenHandler : MonoBehaviour
 
     public void Play()
     {
-        mechanismAnimator.speed = animSpeed;
+        mechanismAnimator.speed = _currentAnimSpeed;
     }
 
     public void Pause()
     {
-        animSpeed = mechanismAnimator.speed;
         mechanismAnimator.speed = 0;
     }
 }
