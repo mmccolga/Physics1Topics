@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class ChemistryScreenHandler : MonoBehaviour
 {
-    private Animator mechanismAnimator;
-    private GameObject lastMechanism;
-    private GameObject lastMenuScreen;
+    public Animator mechanismAnimator;
+    public GameObject lastMechanism;
+    public GameObject lastMenuScreen;
     private float animSpeed;
 
     public void SetMechanismAnimator(Animator mechanismAnimator)
