@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4482447, g: 0.4982717, b: 0.57558084, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482442, g: 0.49827123, b: 0.5755804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2394,7 +2394,7 @@ Transform:
   - {fileID: 1340375095}
   - {fileID: 1846876090}
   m_Father: {fileID: 435118150}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &218610681
 GameObject:
@@ -3185,7 +3185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308351288}
   m_Layer: 5
-  m_Name: BikeLoopCanvas
+  m_Name: AR BikeLoop Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4519,9 +4519,9 @@ Transform:
   - {fileID: 1249851888}
   - {fileID: 1830217294}
   - {fileID: 1053287234}
-  - {fileID: 210320988}
   - {fileID: 1084342495}
   - {fileID: 2830190031638841065}
+  - {fileID: 210320988}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5827,7 +5827,7 @@ PrefabInstance:
     - target: {fileID: 3185318153413547781, guid: 57cd1c17989d246a19945cb86eb3090a,
         type: 3}
       propertyPath: m_Name
-      value: Centripetal
+      value: Friction
       objectReference: {fileID: 0}
     - target: {fileID: 3185318153413547781, guid: 57cd1c17989d246a19945cb86eb3090a,
         type: 3}
@@ -8683,17 +8683,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1420649282}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 955506759}
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1420649282}
+    - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1830217293}
+    - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
@@ -8708,12 +8723,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9242,7 +9277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1053287234
 Transform:
   m_ObjectHideFlags: 0
@@ -9298,7 +9333,7 @@ Transform:
   - {fileID: 1671945253}
   - {fileID: 2072986530}
   m_Father: {fileID: 435118150}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1101162950
 GameObject:
@@ -9588,7 +9623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1149074380
 Transform:
   m_ObjectHideFlags: 0
@@ -9966,6 +10001,96 @@ Transform:
   m_Father: {fileID: 1101839293}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1217321833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217321834}
+  - component: {fileID: 1217321836}
+  - component: {fileID: 1217321835}
+  m_Layer: 5
+  m_Name: banked_car2d
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1217321834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217321833}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.207, y: 0.717, z: -1.241}
+  m_LocalScale: {x: 0.22, y: 0.25, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1646419331}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!212 &1217321835
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217321833}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 2930e6e11ccc24842aa58652888c8f07, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 11.08, y: 6.67}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!222 &1217321836
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217321833}
+  m_CullTransparentMesh: 0
 --- !u!1 &1225018307
 GameObject:
   m_ObjectHideFlags: 0
@@ -10284,7 +10409,7 @@ PrefabInstance:
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8107408151031143975, guid: 8964e3e3cacf64ff6a945a06e5aaf36a,
         type: 3}
@@ -10481,7 +10606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1249851888
 Transform:
   m_ObjectHideFlags: 0
@@ -13301,6 +13426,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 850006989}
+  - {fileID: 1217321834}
   m_Father: {fileID: 1053287234}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13641,12 +13767,12 @@ PrefabInstance:
     - target: {fileID: 7122457254685837241, guid: d79ccbba1a07b47329a74fd7f4e8c546,
         type: 3}
       propertyPath: m_text
-      value: Centripetal
+      value: Friction
       objectReference: {fileID: 0}
     - target: {fileID: 7976753856479249707, guid: d79ccbba1a07b47329a74fd7f4e8c546,
         type: 3}
       propertyPath: m_Name
-      value: Centripetal Toggler
+      value: Friction Toggler
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79ccbba1a07b47329a74fd7f4e8c546, type: 3}
@@ -15361,7 +15487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba9c96fa371b44cc840c4f42ede5481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToToggle: {fileID: 1149074379}
+  objectToToggle: {fileID: 1217321833}
   onlyToggleRenderer: 0
   startOn: 0
 --- !u!114 &1874517009
@@ -15407,7 +15533,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2144519425}
+      - m_Target: {fileID: 1874517008}
         m_MethodName: ToggleObject
         m_Mode: 1
         m_Arguments:
@@ -15448,8 +15574,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2930e6e11ccc24842aa58652888c8f07, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -17324,7 +17450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075767740}
   m_Layer: 5
-  m_Name: BallnStringCanvas
+  m_Name: AR BallnString Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17708,7 +17834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112868503}
   m_Layer: 0
-  m_Name: Centripetal
+  m_Name: Friction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18581,7 +18707,7 @@ Transform:
   m_Children:
   - {fileID: 3402169231748528049}
   m_Father: {fileID: 435118150}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2937639220509122783
 GameObject:
