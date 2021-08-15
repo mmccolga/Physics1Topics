@@ -1,0 +1,85 @@
+﻿{
+	"OrbitsData": [
+		{
+			"BodyName": "Solar system barycenter",
+			"AttractorName": "",
+			"AttractorMass": 0.0,
+			"EC": 0.0,
+			"IN": 0.0,
+			"OM": 0.0,
+			"W": 0.0,
+			"MA": 0.0,
+			"A": 0.0,
+			"Diameter": 0
+		},
+		{
+			"BodyName": "Sun",
+			"AttractorName": "Solar system barycenter",
+			"AttractorMass": 2.6844749751125526e27,
+			"EC": 0.0,
+			"IN": 0.0,
+			"OM": 0.0,
+			"W": 0.0,
+			"MA": 0.0,
+			"A": 0.0,
+			"Diameter": 1392.7,
+			"Color": {
+				"r": 0.9529412,
+				"g": 0.8,
+				"b": 0.25,
+				"a": 1.0
+			},
+			"Type": 1
+		},
+		{
+			"BodyName": "Earth-Moon barycenter",
+			"AttractorName": "Solar system barycenter",
+			"AttractorMass": 1.9884999721201209e30,
+			"EC": 0.0210412089052348,
+			"IN": 0.0060612090369447,
+			"OM": 160.2658938755406,
+			"W": 261.4166510538413,
+			"MA": 173.3373020011133,
+			"A": 0.9884668414685552,
+			"Diameter": 0
+		},
+		{
+			"BodyName": "Earth",
+			"AttractorName": "Earth-Moon barycenter",
+			"AttractorMass": 1.11135511130601e19,
+			"EC": 0.04500924806351013,
+			"IN": 5.252211816843274,
+			"OM": 88.97085363564469,
+			"W": 310.6531500024206,
+			"MA": 328.5176372848259,
+			"A": 0.00003097823699264246,
+			"Diameter": 12.7,
+			"RangeMlt": 50,
+			"Color": {
+				"r": 0.227,
+				"g": 0.368,
+				"b": 0.635,
+				"a": 1.0
+			}
+		},
+		{
+			"BodyName": "Moon",
+			"AttractorName": "Earth-Moon barycenter",
+			"AttractorMass": 5.972189887017193e24,
+			"EC": 0.04500924806355468,
+			"IN": 5.252211816843275,
+			"OM": 88.9708536356446,
+			"W": 130.6531500023838,
+			"MA": 328.5176372848628,
+			"A": 0.002518548296417115,
+			"Diameter": 3.4,
+			"RangeMlt": 50,
+			"Color": {
+				"r": 0.341,
+				"g": 0.341,
+				"b": 0.341,
+				"a": 1.0
+			}
+		}
+	]
+}
