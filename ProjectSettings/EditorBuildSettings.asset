@@ -45,9 +45,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GaussLaw/GaussLaw.unity
     guid: c36c6d6e8bd5e430d8dc3a5e95602cd4
   - enabled: 1
-    path: Assets/Scenes/Optics/Optics.unity
-    guid: a1625c165e6007c408a327a012d1ed7c
-  - enabled: 1
     path: Assets/Scenes/AmpLaw/AmpLaw.unity
     guid: 79860ee735a937547b2228b0e2b9838a
   - enabled: 1
