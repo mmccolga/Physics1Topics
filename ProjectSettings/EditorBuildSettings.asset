@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Optics/Lenses.unity
     guid: 61efca4744f169745b3252bb5c56c712
+  - enabled: 1
+    path: Assets/Scenes/Optics/Optics.unity
+    guid: 1149b27a387a34048bae0604ce8be995
   m_configObjects: {}
