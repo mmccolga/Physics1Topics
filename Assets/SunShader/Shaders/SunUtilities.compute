@@ -1,0 +1,272 @@
+﻿//
+// SunShader 1.3.0
+//
+// Panteleymonov Aleksandr 2017
+//
+// foxes@bk.ru
+// mail@panteleymonov.ru
+//
+
+#pragma kernel SunGenerator
+
+float Radius;
+float Zoom;
+float Seed;
+float SpeedLow;
+float SpeedHi;
+float4 BodyNoiseS;
+float4 BodyNoiseL;
+float RayString;
+float Rays;
+float RayRing;
+float RayGlow;
+float4 RayNoiseS;
+float SpeedRay;
+float SpeedRing;
+float Detail;
+int FrameSize;
+int FramesInWidth;
+float TimeStep;
+
+#pragma kernel StarSpaceGenerator
+
+int Side;
+float LightStage;
+float ScaleStage;
+float Bright;
+float VPMix;
+float CloudSeed;
+float StarsSeed;
+float4 CloudColor1;
+float4 CloudColor2;
+float4 CloudColor3;
+float4 StarsColor1;
+float4 StarsColor2;
+float4 StarsColor3;
+float FirstStarsBright;
+float SecondStarsBright;
+float TextureSize;
+
+RWTexture2D<float4> Result;
+
+float2 Mercator(float3 pos)
+{
+  float l = atan2(pos.z, pos.x);
+  float b = length(pos.xz);
+  if (b <= 0) l = 0;
+  float pi = 3.141592653589793238;
+  float2 resultPos = float2(l, atan2(pos.y, b)) / pi;
+  return resultPos;
+}
+
+float3 Mercator(float2 pos)
+{
+  pos -= 0.5;
+  float pi = 3.141592653589793238;
+  pos *= pi;
+  pos.x *= 2.0;
+  return float3(cos(pos.y)*sin(pos.x),sin(pos.y),cos(pos.y)*cos(pos.x));
+}
+
+float3 Sphere(float2 pos,bool side,float scale)
+{
+  pos -= 0.5;
+  float y=max(abs(pos.x),abs(pos.y)) * 3.141592653589793238 * scale;
+  float2 lpos = normalize(pos);
+  if (y==0)
+    lpos = float2(0,0);
+  float3 rez = float3(sin(y)*lpos.x,cos(y),sin(y)*lpos.y);
+  rez.y = side ?rez.y:-rez.y;
+  return rez;
+}
+
+float3 hash3(float3 n) { return frac(sin(n)*(float)1399763.5453123); }
+float4 hash4(float4 n) { return frac(sin(n)*(float)1399763.5453123); }
+
+float3 hash1to3(float p) { return hash3(float3(p,p,p) + float3(0,3245.432,12356.547)); }
+float3 hash3to3(float3 p) { return hash1to3(dot(p, float3(1, 157, 113))); }
+
+float noise3a(float3 x)
+{
+  float3 p = floor(x);
+  float3 f = frac(x);
+  f = f*f*(3.0 - 2.0*f);
+
+  float n = p.x + dot(p.yz, float2(157.0, 113.0));
+  float4 s1 = lerp(hash4(float4(n,n,n,n) +float4(0.0, 157.0, 113.0, 270.0)), hash4(float4(n,n,n,n) + float4(1.0, 158.0, 114.0, 271.0)), f.xxxx);
+  return lerp(lerp(s1.x, s1.y, f.y), lerp(s1.z, s1.w, f.y), f.z);
+}
+
+float noise3(float3 x)
+{
+  return (noise3a(x) + noise3a(x + float3(11.5, 11.5, 11.5)))*0.5;
+}
+
+float noise4q(float4 x)
+{
+  float4 n3 = float4(0,0.25,0.5,0.75);
+  float4 p2 = floor(x.wwww+n3);
+  float4 b = floor(x.xxxx +n3) + floor(x.yyyy +n3)*157.0 + floor(x.zzzz +n3)*113.0;
+  float4 p1 = b + frac(p2*0.00390625)*float4(164352.0, -164352.0, 163840.0, -163840.0);
+  p2 = b + frac((p2+1)*0.00390625)*float4(164352.0, -164352.0, 163840.0, -163840.0);
+  float4 f1 = frac(x.xxxx+n3);
+  float4 f2 = frac(x.yyyy+n3);
+				
+  float4 n1 = float4(0,1.0,157.0,158.0);
+  float4 n2 = float4(113.0,114.0,270.0,271.0);		
+  float4 vs1 = lerp(hash4(p1), hash4(n1.yyyy+p1), f1);
+  float4 vs2 = lerp(hash4(n1.zzzz+p1), hash4(n1.wwww+p1), f1);
+  float4 vs3 = lerp(hash4(p2), hash4(n1.yyyy+p2), f1);
+  float4 vs4 = lerp(hash4(n1.zzzz+p2), hash4(n1.wwww+p2), f1);	
+  vs1 = lerp(vs1, vs2, f2);
+  vs3 = lerp(vs3, vs4, f2);
+				
+  vs2 = lerp(hash4(n2.xxxx+p1), hash4(n2.yyyy+p1), f1);
+  vs4 = lerp(hash4(n2.zzzz+p1), hash4(n2.wwww+p1), f1);
+  vs2 = lerp(vs2, vs4, f2);
+  vs4 = lerp(hash4(n2.xxxx+p2), hash4(n2.yyyy+p2), f1);
+  float4 vs5 = lerp(hash4(n2.zzzz+p2), hash4(n2.wwww+p2), f1);
+  vs4 = lerp(vs4, vs5, f2);
+  f1 = frac(x.zzzz+n3);
+  f2 = frac(x.wwww+n3);
+				
+  vs1 = lerp(vs1, vs2, f1);
+  vs3 = lerp(vs3, vs4, f1);
+  vs1 = lerp(vs1, vs3, f2);
+				
+  return dot(vs1,0.25);
+}
+
+float noiseSpere(float3 surfase, float zoom, float3 subnoise, float anim, float fragTime)
+{
+	float s = 0.0;
+
+	if (Detail>0.0) s = noise4q(float4(surfase*zoom*BodyNoiseS.x + subnoise, fragTime*SpeedHi))*BodyNoiseL.x;//*0.625;
+	if (Detail>1.0) s =s*0.85+noise4q(float4(surfase*zoom*BodyNoiseS.y + subnoise*3.0, fragTime*SpeedHi*3.0))*BodyNoiseL.y;//*0.125;
+	if (Detail>2.0) s =s*0.94+noise4q(float4(surfase*zoom*BodyNoiseS.z + subnoise*5.0, anim*5.0))*BodyNoiseL.z;//*0.0625;//*0.03125;
+	if (Detail>3.0) s =s*0.98+noise4q(float4(surfase*zoom*BodyNoiseS.w + subnoise*6.0, fragTime*SpeedLow*6.0))*BodyNoiseL.w;//*0.03125;
+	if (Detail>4.0) s =s*0.98+noise4q(float4(surfase*zoom*BodyNoiseS.w*2.0 + subnoise*9.0, fragTime*SpeedLow*9.0))*BodyNoiseL.w*0.36; //0.01125
+
+	return s;
+}
+
+float4 RenderSun(float3 surface, float time)
+{
+  float fragTime = time;
+  float4 col = float4(0,0,0,1);
+
+  float s1 = noiseSpere(surface*Radius, 0.5, float3(45.78, 113.04, 28.957)*Seed, fragTime*SpeedLow, fragTime);
+	s1 = pow(s1*2.4, 2.0);
+	float s2 = noiseSpere(surface*Radius, 4.0, float3(83.23, 34.34, 67.453)*Seed, fragTime*SpeedHi, fragTime);
+	s2 = s2*2.2;
+  
+  float c = Radius + time;
+  float3 pr = surface*RayNoiseS.x;
+  float3 noises01=float3(83.23, 34.34, 67.453)*Seed;
+  float nd = noise4q(float4(pr+noises01, -time*SpeedRing + c))*2.0;
+  nd = pow(nd, 2.0);
+  pr *= RayNoiseS.y;
+  float n = noise4q(float4(pr+ noises01, -time*SpeedRing + c));
+	pr *= RayNoiseS.z;
+	float ns = noise4q(float4(pr+ noises01, -time*SpeedRay + c));
+	if (Detail>=3.0) {
+		pr *= RayNoiseS.w;
+		ns = ns+noise4q(float4(pr+ noises01, -time*SpeedRay + 0));
+	} else ns*=2.0;
+	n = pow(abs(n), Rays)*pow(abs(nd),RayRing)*ns;
+
+  col = float4(s1,pow(s1, 60.0),s2,n)*0.5;
+
+  col = clamp(col, 0, 1);
+
+  return col;
+}
+
+[numthreads(16,16,1)]
+void SunGenerator (uint3 id : SV_DispatchThreadID)
+{
+  float2 pos = frac(id.xy * 1.0 / FrameSize);
+  int side=floor(dot(id.xy / FrameSize, int2(1,FramesInWidth)));
+  float3 surface = normalize(Sphere(pos,(side & 1)==0,1.5));
+  int frmeId = floor(side*0.5);
+  float dftame= frmeId * 2.0 / (FramesInWidth * FramesInWidth);
+  float time = frac(dftame);
+
+  float4 col = float4(1,0,0,1);
+  col = lerp(RenderSun(surface,(time+1)* TimeStep),RenderSun(surface,time* TimeStep),time);
+
+	Result[id.xy] = col;
+}
+
+float voronoi(float3 p) {
+
+  float3 b, r, g = floor(p);
+  p = frac(p);
+
+  float d = 1.;
+
+  for (int j = -1; j <= 1; j++) {
+    for (int i = -1; i <= 1; i++) {
+
+    b = float3(i, j, -1);
+    r = b - p + hash3to3(g + b);
+    d = min(d, dot(r, r));
+
+    b.z = 0.0;
+    r = b - p + hash3to3(g + b);
+    d = min(d, dot(r, r));
+
+    b.z = 1.;
+    r = b - p + hash3to3(g + b);
+    d = min(d, dot(r, r));
+
+    }
+  }
+
+  return d;
+}
+
+float4 noiseSpace(float3 ray, float zoom, float3 subnoise, float anim)
+{
+  float s = 0;
+  float d = 0.4;
+  float f = 5.0;
+  float scale = 0;
+  float invst = 1.0 / ScaleStage;
+
+  for (int i = 0; i < 5; i++) {
+    s += lerp(voronoi(ray*f*zoom + subnoise*f), noise3(ray*f*zoom + subnoise*f), VPMix)*d;
+    //s += voronoi(ray*f*zoom + subnoise*f)*d*0.5;
+    //s += noise3(ray*f*zoom + subnoise*f)*d*0.5;
+    f *= invst;
+    scale += d;
+    d *= LightStage;
+  }
+  s /= scale;
+
+  return float4(s, abs(noise3(ray*3.1 + subnoise)), abs(noise3(ray*3.1 + subnoise*6.0)), abs(noise3(ray*3.1 + subnoise*13.0)));
+}
+
+float4 RenderStarSpace(float3 ray)
+{
+  float4 col = float4(0,0,0,0);
+  float4 s4 = noiseSpace(ray, Zoom, hash1to3(CloudSeed)*10.0, 0.0);
+  s4.x = pow(s4.x, 3.0)*Bright;
+  col.xyz += lerp(lerp(CloudColor1.xyz, CloudColor2.xyz, s4.y*1.9), CloudColor3.xyz, s4.w*0.75)*s4.x*pow(s4.z*2.5, 3.0)*0.2;
+  float3 _seed=hash1to3(StarsSeed)*10.0;
+  float st = clamp(0.005 - voronoi(ray*20.0 + _seed), 0, 1);
+  float stf = pow(st*200.0, 6.0);
+  col.xyz += lerp(lerp(StarsColor1.xyz, StarsColor2.xyz, noise3(ray*10.0 + _seed)), StarsColor3.xyz, stf)*stf * FirstStarsBright;
+  col.xyz += StarsColor3.xyz*st*20.0*s4.w*FirstStarsBright;
+  col.xyz += StarsColor3.xyz*pow(clamp(0.01 - voronoi(ray*100.0 + _seed), 0, 1)*100.0,5.0)*SecondStarsBright*s4.w;
+  return col;
+}
+
+[numthreads(16,16,1)]
+void StarSpaceGenerator (uint3 id : SV_DispatchThreadID)
+{
+  float3 s = normalize(float3(id.xy*TextureSize*2.0-1.0,1.0));
+  float3 side[6] = { s.xyz, float3(-s.x,s.y,-s.z), float3(s.zy,-s.x), float3(-s.z,s.yx), float3(s.xz,-s.y), float3(s.x,-s.z,s.y) };
+
+	Result[id.xy] = RenderStarSpace(side[Side]);
+}
