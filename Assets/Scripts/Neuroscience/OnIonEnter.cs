@@ -18,24 +18,25 @@ namespace Neuroscience
         private void OnTriggerEnter(Collider other)
         {
             Ion ion = other.gameObject.GetComponent<Ion>();
-            if (!ion) return;
+            if (ion == null) return;
 
             if (queuedIon != ion) return;
+            queuedIon.GetComponent<Renderer>().material.color = Color.white;
 
-            if (!otherOnIonEnter._ionStopped)
-            {
-                ion.StopMoving();
-                _ionStopped = true;
-                return;
-            }
-            
+            _ionStopped = true;
             ion.StopMoving();
 
+            if (otherOnIonEnter.queuedIon == null) return;
+            if (!otherOnIonEnter._ionStopped) return;
+
+            _ionStopped = false;
+
             otherOnIonEnter.queuedIon.movingThroughProtein = true;
-            otherOnIonEnter.queuedIon.MoveToward(velocityTowardEntrance, 
-                otherOnIonEnter.transform.position + Vector3.up * -2 * yDirection);
+            Vector3 otherIonDirection = otherOnIonEnter.transform.position + Vector3.up * -.5f * yDirection;
+            otherOnIonEnter.queuedIon.MoveToward(velocityTowardEntrance, otherIonDirection);
+
             ion.movingThroughProtein = true;
-            ion.MoveToward(velocityTowardEntrance, transform.position + Vector3.up * 2 * yDirection);
+            ion.MoveToward(velocityTowardEntrance, transform.position + Vector3.up * .5f * yDirection);
             
             queuedIon = null;
             otherOnIonEnter.queuedIon = null;

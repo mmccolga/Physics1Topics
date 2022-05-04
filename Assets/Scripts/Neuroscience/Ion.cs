@@ -12,11 +12,11 @@ namespace Neuroscience
         private Vector3 _driftDirection;
         public Vector3 direction;
         public string element;
+        public float speed;
 
         [HideInInspector]
         public bool movingThroughProtein;
 
-        private bool _freeFloating;
         private bool _movingToPoint;
         private Vector3 _targetPosition;
         private float _inRangeSpeed;
@@ -26,7 +26,7 @@ namespace Neuroscience
             Physics.gravity = Vector3.zero;
             _rigidbody = GetComponent<Rigidbody>();
             ShootInRandomDirection();
-            _freeFloating = true;
+            _movingToPoint = false;
         }
 
         private void FixedUpdate()
@@ -41,9 +41,9 @@ namespace Neuroscience
             if (direction == Vector3.zero)
             {
                 direction = GetRandomVector3().normalized;
-                _rigidbody.AddForce(direction * .5f, ForceMode.Impulse);
+                _rigidbody.AddForce(direction * speed, ForceMode.Impulse);
             }
-            _rigidbody.AddForce(_driftDirection * .6f, ForceMode.Force);
+            _rigidbody.AddForce(_driftDirection * speed, ForceMode.Force);
         }
 
         private Vector3 GetRandomVector3()
@@ -54,15 +54,15 @@ namespace Neuroscience
         private void ShootInRandomDirection()
         {
             direction = GetRandomVector3().normalized;
-            _rigidbody.AddForce(direction * .5f, ForceMode.Impulse);
+            _rigidbody.AddForce(direction * speed, ForceMode.Impulse);
             _driftDirection = Vector3.Cross(direction, Vector3.up).normalized;
         }
 
         public void MoveToward(float velocity, Vector3 targetPosition)
         {
-            if (_freeFloating) // If we were previously free floating we have to reinitialize these variables
+            if (!_movingToPoint) // If we were previously free floating we have to reinitialize these variables
             {
-                _freeFloating = false;
+                Debug.Log("moving toward " + targetPosition);
                 _movingToPoint = true;
                 _targetPosition = targetPosition;
                 _inRangeSpeed = velocity;
@@ -71,27 +71,24 @@ namespace Neuroscience
             
             transform.position = Vector3.Lerp(transform.position, targetPosition, velocity);
 
-            if (transform.position.y < 2f)
-                return;
-            
-            // When we reach the target
+            if (transform.position != targetPosition) return;
             
             StopMoving();
 
-            if (!movingThroughProtein)
-                return;
-                    
-            transform.position = Vector3.up * 1.25f;
+            if (!movingThroughProtein) return;
+            
+            _rigidbody.velocity = Vector3.zero;
+            transform.position = Vector3.up * speed;
             ShootInRandomDirection();
             var newVelocity = _rigidbody.velocity;
             newVelocity = new Vector3(newVelocity.x, -Mathf.Abs(newVelocity.y), newVelocity.z);
             _rigidbody.velocity = newVelocity;
+            movingThroughProtein = false;
         }
 
         public void StopMoving()
         {
             _rigidbody.velocity = Vector3.zero;
-            _freeFloating = true;
             _movingToPoint = false;
         }
     }

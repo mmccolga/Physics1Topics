@@ -19,15 +19,18 @@ namespace Neuroscience
 
         private void OnTriggerEnter(Collider other)
         {
-            if (_onIonEnter.queuedIon != null) return;
-            
             Ion ion = other.gameObject.GetComponent<Ion>();
             if (ion == null) return;
 
-            if (this.elementToReceive != ion.element) return;
+            bool hasQueuedIon = _onIonEnter.queuedIon != null;
+            if (hasQueuedIon) return;
+
+            bool ionMatchesProtein = this.elementToReceive == ion.element;
+            if (!ionMatchesProtein) return;
 
             Debug.Log(elementToReceive + " protein queued a(n) " + ion.element + " ion");
             _onIonEnter.queuedIon = ion;
+            ion.GetComponent<Renderer>().material.color = Color.green;
             ion.MoveToward(travelTime, transform.position);
         }
     }
