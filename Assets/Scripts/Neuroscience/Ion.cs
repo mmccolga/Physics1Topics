@@ -38,11 +38,8 @@ namespace Neuroscience
             }
             
             // is _freeFloating
-            if (direction == Vector3.zero)
-            {
-                direction = GetRandomVector3().normalized;
-                _rigidbody.AddForce(direction * speed, ForceMode.Impulse);
-            }
+            if (direction == Vector3.zero) ShootInRandomDirection();
+
             _rigidbody.AddForce(_driftDirection * speed, ForceMode.Force);
         }
 
@@ -58,18 +55,18 @@ namespace Neuroscience
             _driftDirection = Vector3.Cross(direction, Vector3.up).normalized;
         }
 
-        public void MoveToward(float velocity, Vector3 targetPosition)
+        public void MoveToward(float speed, Vector3 targetPosition)
         {
             if (!_movingToPoint) // If we were previously free floating we have to reinitialize these variables
             {
                 Debug.Log("moving toward " + targetPosition);
                 _movingToPoint = true;
                 _targetPosition = targetPosition;
-                _inRangeSpeed = velocity;
+                _inRangeSpeed = speed;
                 _rigidbody.velocity = Vector3.zero;
             }
             
-            transform.position = Vector3.Lerp(transform.position, targetPosition, velocity);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, speed);
 
             if (transform.position != targetPosition) return;
             
@@ -78,11 +75,8 @@ namespace Neuroscience
             if (!movingThroughProtein) return;
             
             _rigidbody.velocity = Vector3.zero;
-            transform.position = Vector3.up * speed;
+            transform.position = Vector3.up * this.speed;
             ShootInRandomDirection();
-            var newVelocity = _rigidbody.velocity;
-            newVelocity = new Vector3(newVelocity.x, -Mathf.Abs(newVelocity.y), newVelocity.z);
-            _rigidbody.velocity = newVelocity;
             movingThroughProtein = false;
         }
 
