@@ -51081,6 +51081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2756841735442947782, guid: 2c3729e47ac354d43bcc495ca0b78999,
         type: 3}
+      propertyPath: travelTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756841735442947782, guid: 2c3729e47ac354d43bcc495ca0b78999,
+        type: 3}
       propertyPath: yDirection
       value: 1
       objectReference: {fileID: 0}
@@ -51212,7 +51217,7 @@ PrefabInstance:
     - target: {fileID: 6819314664232352876, guid: 2c3729e47ac354d43bcc495ca0b78999,
         type: 3}
       propertyPath: travelTime
-      value: 0.2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6819314664232352876, guid: 2c3729e47ac354d43bcc495ca0b78999,
         type: 3}
@@ -61695,6 +61700,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2756841735442947782, guid: 2c3729e47ac354d43bcc495ca0b78999,
         type: 3}
+      propertyPath: travelTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756841735442947782, guid: 2c3729e47ac354d43bcc495ca0b78999,
+        type: 3}
       propertyPath: otherOnIonEnter
       value: 
       objectReference: {fileID: 769253375}
@@ -61801,7 +61811,7 @@ PrefabInstance:
     - target: {fileID: 6819314664232352876, guid: 2c3729e47ac354d43bcc495ca0b78999,
         type: 3}
       propertyPath: travelTime
-      value: 0.2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6819314664232352876, guid: 2c3729e47ac354d43bcc495ca0b78999,
         type: 3}

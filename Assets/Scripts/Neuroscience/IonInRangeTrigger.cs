@@ -8,9 +8,13 @@ namespace Neuroscience
 {
     public class IonInRangeTrigger : MonoBehaviour
     {
-        private OnIonEnter _onIonEnter;
+        [HideInInspector]
+        public OnIonEnter _onIonEnter;
         public string elementToReceive;
         public float travelTime;
+
+        [HideInInspector]
+        public bool waitingForLastIonToFinishExiting;
 
         private void Start()
         {
@@ -19,6 +23,8 @@ namespace Neuroscience
 
         private void OnTriggerEnter(Collider other)
         {
+            if (waitingForLastIonToFinishExiting) return;
+
             Ion ion = other.gameObject.GetComponent<Ion>();
             if (ion == null) return;
 
@@ -28,10 +34,10 @@ namespace Neuroscience
             bool ionMatchesProtein = this.elementToReceive == ion.element;
             if (!ionMatchesProtein) return;
 
-            Debug.Log(elementToReceive + " protein queued a(n) " + ion.element + " ion");
             _onIonEnter.queuedIon = ion;
-            ion.GetComponent<Renderer>().material.color = Color.green;
-            ion.MoveToward(travelTime, transform.position);
+            ion.ionInRangeTrigger = this;
+            waitingForLastIonToFinishExiting = true;
+            StartCoroutine(ion.MoveToward(transform.position, false, _onIonEnter));
         }
     }
 }
