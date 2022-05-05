@@ -237,8 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4981e7195f5674a6690e626da14ac7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onIonEnter: {fileID: 0}
   elementToReceive: K
-  travelTime: 0.02
+  speedMovingToProtein: 0.7
+  waitingForLastIonToFinishExiting: 0
 --- !u!65 &6451758969791800431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -309,10 +311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917fc2e7100df483eb1d9af1cf6b44d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  queuedIon: {fileID: 0}
   otherOnIonEnter: {fileID: 0}
   yDirection: -1
-  velocityTowardEntrance: 0
+  travelTime: 0
+  ionReadyToEnter: 0
+  queuedIon: {fileID: 0}
 --- !u!1 &7347604326140715266
 GameObject:
   m_ObjectHideFlags: 0

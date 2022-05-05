@@ -126,5 +126,5 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   element: 
   speed: 0.06
-  speedMovingThroughProtein: 1
+  speedExitingProtein: 3
   ionInRangeTrigger: {fileID: 0}

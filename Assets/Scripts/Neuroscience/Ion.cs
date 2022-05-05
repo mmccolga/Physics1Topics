@@ -15,7 +15,7 @@ namespace Neuroscience
         public Vector3 direction;
         public string element;
         public float speed;
-        public float speedMovingThroughProtein;
+        public float speedExitingProtein;
         private bool _movingToPoint;
         
         [HideInInspector]
@@ -50,12 +50,12 @@ namespace Neuroscience
             _driftDirection = Vector3.Cross(direction, Vector3.up).normalized;
         }
 
-        public IEnumerator MoveToward(Vector3 targetPosition, bool shootAtEnd, OnIonEnter onIonEnter)
+        public IEnumerator MoveToward(float speed, Vector3 targetPosition, bool shootAtEnd, OnIonEnter onIonEnter)
         {
             _movingToPoint = true;
             _rigidbody.velocity = Vector3.zero;
 
-            yield return StartCoroutine(LerpCoroutine(targetPosition, shootAtEnd, onIonEnter));
+            yield return StartCoroutine(LerpCoroutine(speed, targetPosition, shootAtEnd, onIonEnter));
 
             Debug.Log(IsOtherIonReadyToEnter(onIonEnter));
 
@@ -74,13 +74,13 @@ namespace Neuroscience
             }
         }
 
-        private IEnumerator LerpCoroutine(Vector3 targetPosition, bool shootAtEnd, OnIonEnter onIonEnter)
+        private IEnumerator LerpCoroutine(float speed, Vector3 targetPosition, bool shootAtEnd, OnIonEnter onIonEnter)
         {
             Vector3 start = transform.position;
             float t = 0f;
             while (t < 1)
             {
-                t += Time.deltaTime / speedMovingThroughProtein;
+                t += Time.deltaTime / speed;
                 if (t > 1) t = 1;
 
                 transform.position = Vector3.Lerp(start, targetPosition, t);
@@ -113,9 +113,9 @@ namespace Neuroscience
             if (element == "K") flipSign = -1;
 
             Vector3 otherIonDirection = otherOnIonEnter.transform.position + Vector3.up * -.5f * flipSign;
-            StartCoroutine(otherOnIonEnter.queuedIon.MoveToward(otherIonDirection, true, otherOnIonEnter));
+            StartCoroutine(otherOnIonEnter.queuedIon.MoveToward(speedExitingProtein, otherIonDirection, true, otherOnIonEnter));
 
-            yield return StartCoroutine(this.MoveToward(transform.position + Vector3.up * .5f * flipSign, true, onIonEnter));
+            yield return StartCoroutine(this.MoveToward(speedExitingProtein, transform.position + Vector3.up * .5f * flipSign, true, onIonEnter));
 
             onIonEnter.queuedIon = null;
             otherOnIonEnter.queuedIon = null;

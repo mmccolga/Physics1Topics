@@ -11,7 +11,8 @@ namespace Neuroscience
         [HideInInspector]
         public OnIonEnter _onIonEnter;
         public string elementToReceive;
-        public float travelTime;
+
+        public float speedMovingToProtein;
 
         [HideInInspector]
         public bool waitingForLastIonToFinishExiting;
@@ -37,7 +38,7 @@ namespace Neuroscience
             _onIonEnter.queuedIon = ion;
             ion.ionInRangeTrigger = this;
             waitingForLastIonToFinishExiting = true;
-            StartCoroutine(ion.MoveToward(transform.position, false, _onIonEnter));
+            StartCoroutine(ion.MoveToward(speedMovingToProtein, transform.position, false, _onIonEnter));
         }
     }
 }
